@@ -35,13 +35,26 @@ module SmartlistPushApi
       })
     end
 
-    def self.changed_subscription(user_id, from_plan, to_plan, conversion_at)
+    def self.upgraded_subscription(user_id, from_plan, to_plan, conversion_at)
       raise InvalidDataException if from_plan.blank?
       raise InvalidDataException if to_plan.blank?
       raise InvalidDataException if conversion_at.blank?
 
       SmartlistPushApi.make_post_request("/users/#{user_id}/subscription/", {
-          type: :conversion,
+          type: :upgraded,
+          plan_name: to_plan,
+          from_plan: from_plan,
+          event_at: conversion_at.utc.strftime('%Y-%m-%d %H:%M:%S')
+      })
+    end
+
+    def self.downgraded_subscription(user_id, from_plan, to_plan, conversion_at)
+      raise InvalidDataException if from_plan.blank?
+      raise InvalidDataException if to_plan.blank?
+      raise InvalidDataException if conversion_at.blank?
+
+      SmartlistPushApi.make_post_request("/users/#{user_id}/subscription/", {
+          type: :downgraded,
           plan_name: to_plan,
           from_plan: from_plan,
           event_at: conversion_at.utc.strftime('%Y-%m-%d %H:%M:%S')

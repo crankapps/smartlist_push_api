@@ -6,7 +6,7 @@ module SmartlistPushApi
   class InvalidDataException < StandardError;
   end
 
-  @base_uri = ''
+  @base_uri = 'http://smartlisthq.com/push'
   @access_token = ''
 
   class << self

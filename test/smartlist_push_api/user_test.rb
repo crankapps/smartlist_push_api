@@ -84,7 +84,7 @@ module SmartlistPushApi
       }])
 
       SmartlistPushApi.stub(:make_post_request, mock) do
-        SmartlistPushApi::User.changed_subscription('user_ref_101', 'Freemium', 'Pro', date)
+        SmartlistPushApi::User.upgraded_subscription('user_ref_101', 'Freemium', 'Pro', date)
       end
       assert mock.verify
     end
