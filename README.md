@@ -53,6 +53,8 @@ Once a user registers within your app, you can send that information to Smartlis
 
 The field `ref_id` is required and should be unique for each user from your app. You will use that field to create or update a user’s information.  
 
+You can also use the above method to deliver your existing users data to Smartlist.
+
 When a user changes their data, you can sync information with Smartlist with the following method:
 
 ```ruby 
@@ -76,6 +78,7 @@ Every time user logs in in your app, you can update Smartlist (as a way to track
 ```
 This method receive two attributes: user's `ref_id` and a `datetime` object. 
 
+You can also use the above method to deliver your existing users login activity to Smartlist.
 
 #### Subscription Activity
 
@@ -96,6 +99,7 @@ If your app has subscription plans, you can send that to Smartlist to filter use
  # ref_id, plan name that was canceled, datetime object when subscription was cancelled
  SmartlistPushApi::User.canceled_subscription('ref_user_102', 'Pro', 2.days.ago)
 ```
+You can also use the above method to deliver your existing users subscription status to Smartlist.
 
 ## License
 
