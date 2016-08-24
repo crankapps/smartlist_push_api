@@ -1,6 +1,6 @@
 # Smartlist Push API
 
-THe Smartlist Push API allows you to send your user activity to Smartlist to drive analytics and automated messaging through the Smartlist application. The data that you send to Smartlist  is used to set up filters that enable the creation of segments and targeting for automated messaging to users.
+The Smartlist Push API allows you to send your user activity to Smartlist to drive analytics and automated messaging through the Smartlist application. The data that you send to Smartlist is used to set up filters that enable the creation of segments and targeting for automated messaging to users.
 
 ## Installation
 
