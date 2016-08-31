@@ -1,6 +1,7 @@
 require 'smartlist_push_api/version'
 require 'smartlist_push_api/http/http_client'
 require 'smartlist_push_api/user'
+require 'smartlist_push_api/custom'
 
 module SmartlistPushApi
   class InvalidDataException < StandardError;
