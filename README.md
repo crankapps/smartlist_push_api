@@ -101,6 +101,19 @@ If your app has subscription plans, you can send that to Smartlist to filter use
 ```
 You can also use the above method to deliver your existing users subscription status to Smartlist.
 
+#### Custom Events
+
+For all other events that you have inside your app, you can use following method to post them to Smartlist.
+ 
+ ```rails
+ SmartlistPushApi::Custom.create('ref_user_102', {
+    event: 'rented-movie',
+    title: 'The Man Who Knew Infinity',
+    event_date: '2016-07-26 20:28:37',
+    payload: ['drama', 'biography']
+    })
+ ```
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
